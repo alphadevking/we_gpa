@@ -138,7 +138,7 @@ export default function GPA() {
                         <input
                             autoFocus
                             type="number"
-                            className="px-3 py-2 ring-1 ring-gray-50 hover:ring-gray-50 outline-none rounded-lg w-24 text-sm h-full"
+                            className="px-3 py-2 ring-1 ring-gray-50 hover:ring-gray-50 outline-none rounded-lg w-24 text-sm h-full bg-gray-50 text-gray-800"
                             placeholder="Level"
                             min={0}
                             step={100}
@@ -160,7 +160,7 @@ export default function GPA() {
                                 score of 0.
                             </p>
 
-                            <div className="bg-gray-50 mx-auto rounded-xl flex items-center w-fit justify-between">
+                            <div className="bg-gray-50 text-gray-800 mx-auto rounded-xl flex items-center w-fit justify-between">
                                 <input
                                     type="number"
                                     className="px-5 py-4 ring-1 ring-gray-50 hover:ring-gray-50 outline-none rounded-l-lg text-sm h-full"
@@ -176,7 +176,7 @@ export default function GPA() {
 
                             <h2>Grades & Course Units</h2>
 
-                            <div className='overflow-hidden w-full max-w-xl bg-gray-50 py-5 px-2 md:p-5 shadow-lg rounded-lg mx-auto text-xs'>
+                            <div className='overflow-hidden w-full max-w-xl bg-gray-50 text-gray-800 py-5 px-2 md:p-5 shadow-lg rounded-lg mx-auto text-xs'>
                                 <div className='overflow-x-auto'>
 
                                     <div className='grid grid-cols-5 text-gray-800 font-semibold uppercase'>

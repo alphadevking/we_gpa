@@ -1,6 +1,6 @@
 // "use client"
 import { Metadata } from 'next';
-import GPA from '../pages/GPA';
+import GPA from '../../pages/GPA';
 
 export const metadata: Metadata = {
     title: 'GPA Calculator',

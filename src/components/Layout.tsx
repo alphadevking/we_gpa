@@ -1,9 +1,14 @@
+import { useContext } from "react"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
+import { ThemeContext } from "./Theme/ThemeContext"
 
 export const Layout = ({ children, className, navbar, footer }: { children?: React.ReactNode, className?: string, navbar?: boolean, footer?: boolean }) => {
+
+    const { isDark } = useContext(ThemeContext);
+
     return (
-        <div className='min-h-screen grid bg-gradient-to-br from-slate-100 to-neutral-200'>
+        <div className={`${isDark ? 'bg-gradient-to-r from-teal-900 to-teal-950 text-slate-50' : 'bg-gradient-to-br from-slate-100 to-neutral-200 text-gray-800'} scroll-smooth min-h-screen grid`}>
 
             {
                 navbar && (
