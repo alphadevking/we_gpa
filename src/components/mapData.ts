@@ -1,14 +1,15 @@
 import editorKeys from '@/assets/editorKeys.jpg'
+import logo from '@/./app/logo.png'
 
 export const topNavItems = [
   {
-    title: "CGPA Calculator",
-    href: "/cgpa-calculator",
+    title: "GPA Calculator",
+    href: "/gpa-calculator",
     target: "_self",
   },
   {
-    title: "GPA Calculator",
-    href: "/",
+    title: "CGPA Calculator",
+    href: "/cgpa-calculator",
     target: "_self",
   },
   // {
@@ -20,6 +21,7 @@ export const topNavItems = [
 
 export const assets = {
   "images" : {
-    "editorKeys": editorKeys
-  }
+    "editorKeys": editorKeys,
+    "logo" : logo
+  },
 }

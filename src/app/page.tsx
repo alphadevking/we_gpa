@@ -1,6 +1,7 @@
 "use client"
 import { Layout } from '@/components/Layout'
 import { assets } from '@/components/mapData';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PiCaretDoubleRightBold } from "react-icons/pi";
@@ -8,6 +9,9 @@ import { PiCaretDoubleRightBold } from "react-icons/pi";
 export default function Home() {
   return (
     <main>
+      <Head>
+        <link rel="icon" href="/logo.png" sizes="any" /> 
+      </Head>
       <Layout navbar footer className="mx-l md:ml-24 lg:ml-32 p-5">
         <div className="md:flex md:mr-0 mr-10">
           <div className="md:flex items-center">
@@ -19,7 +23,7 @@ export default function Home() {
                 <p className="mt-4 text-sm font-normal tracking-normal">
                   The one-stop solution tailored for college students who seek clarity and efficiency in managing their academic progress!
                 </p>
-                <Link href={'/cgpa-calculator'} className="mt-3 flex w-fit items-center gap-3 hover:gap-4 py-4 px-6 bg-gray-900 text-white rounded-lg transition-all duration-500 transform hover:scale-105 cursor-pointer hover:shadow-lg">
+                <Link href={'/gpa-calculator'} className="mt-3 flex w-fit items-center gap-3 hover:gap-4 py-4 px-6 bg-gray-900 text-white rounded-lg transition-all duration-500 transform hover:scale-105 cursor-pointer hover:shadow-lg">
                   <button className="text-lg text-md outline-none border-none">Start Now</button>
                   <PiCaretDoubleRightBold className="h-5 w-5" />
                 </Link>

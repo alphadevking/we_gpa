@@ -3,7 +3,7 @@ import Navbar from "./Navbar"
 
 export const Layout = ({ children, className, navbar, footer }: { children?: React.ReactNode, className?: string, navbar?: boolean, footer?: boolean }) => {
     return (
-        <div className='min-h-screen grid'>
+        <div className='min-h-screen grid bg-gradient-to-br from-slate-100 to-neutral-200'>
 
             {
                 navbar && (
