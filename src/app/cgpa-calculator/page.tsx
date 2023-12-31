@@ -1,6 +1,6 @@
 // "use client"
 import { Metadata } from 'next'
-import CGPA from '../../pages/CGPA'
+import CGPA from '../../components/pages/CGPA'
 
 export const metadata: Metadata = {
     title: 'CGPA Calculator',
