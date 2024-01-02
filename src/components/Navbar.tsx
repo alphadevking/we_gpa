@@ -4,6 +4,7 @@ import { GrClose } from 'react-icons/gr';
 import { assets, topNavItems } from './mapData';
 import Link from 'next/link';
 import Image from 'next/image';
+import SigninButton from './Buttons/signinButton';
 
 const Navbar: React.FC = () => {
     const [showNav, setShowNav] = useState<boolean>(false);
@@ -11,14 +12,14 @@ const Navbar: React.FC = () => {
     const toggleNav = () => setShowNav(!showNav);
 
     return (
-        <div className="md:px-32 px-5 fixed w-screen z-10 max-w-screen-2xl bg-transparent backdrop-blur pt-3 text-sm grid md:grid-flow-col">
+        <div className="md:px-32 px-5 fixed w-screen z-10 max-w-screen-2xl bg-transparent backdrop-blur pt-3 text-sm grid md:grid-flow-col items-center">
             <div className='flex justify-between items-center'>
-                <Link href='/' className="flex gap-x-1 cursor-pointer select-none w-fit">
+                <Link href='/' className="flex gap-x-1 cursor-pointer select-none w-fit my-auto">
                     <Image src={assets.images.logo} className='w-12 h-12 m-auto' alt='weGPA'/>
                     <div className="font-semibold normal-case text-xl py-4">weGPA</div>
                 </Link>
                 <button onClick={toggleNav} className="md:hidden text-xl font-bold">
-                    {showNav ? < GrClose className='text-gray-950' /> : <GiHamburgerMenu className='text-gray-950'/> }
+                    {showNav ? < GrClose className='' /> : <GiHamburgerMenu className=''/> }
                 </button>
             </div>
 
@@ -33,10 +34,13 @@ const Navbar: React.FC = () => {
                             </li>
                         ))
                     }
+                    <div className='w-fit justify-end'>
+                        <SigninButton />
+                    </div>
                 </ul>
             </div>
 
-            <ul className="hidden md:flex md:py-3 md:gap-3">
+            <ul className="hidden md:flex md:py-4 md:gap-3 justify-center">
                 {
                     topNavItems.map((val, i) => (
                         <li key={i}>
@@ -47,6 +51,10 @@ const Navbar: React.FC = () => {
                     ))
                 }
             </ul>
+
+            <div className='hidden md:flex md:justify-end md:py-4 md:gap-3 text-right'>
+                <SigninButton />
+            </div>
 
         </div>
     );
