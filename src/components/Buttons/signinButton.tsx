@@ -3,7 +3,9 @@ import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
-import { VscSignOut } from "react-icons/vsc";
+import { VscHome, VscSignOut } from "react-icons/vsc";
+import Link from "next/link";
+import { PiUserCircleGear } from "react-icons/pi";
 
 const SigninButton = () => {
     const { data: session } = useSession();
@@ -27,12 +29,24 @@ const SigninButton = () => {
 
                 {
                     dropdownOpen && (
-                        <div className="absolute origin-top top-[70%] md:right-0 mt-5 grid gap-1 w-full bg-white rounded-md shadow-xl z-20 animate-fade-in-down text-xs duration-500">
+                        <div className="absolute origin-top top-[70%] md:right-0 mt-5 grid gap-1 w-full py-2 bg-white rounded-md shadow-xl z-20 animate-fade-in-down text-xs duration-500">
+                            <Link className="p-3 text-gray-800 hover:bg-gray-100 rounded-md font-bold" href={'/dashboard'}>
+                                <div className="flex items-center gap-2 justify-center">
+                                    <VscHome className='text-xl' />
+                                    <span>Dashboard</span>
+                                </div>
+                            </Link>
+                            <Link className="p-3 text-gray-800 hover:bg-gray-100 rounded-md font-bold" href={'/profile'}>
+                                <div className="flex items-center gap-2 justify-center">
+                                    <PiUserCircleGear className='text-xl' />
+                                    <span>Profile</span>
+                                </div>
+                            </Link>
                             <button
                                 onClick={() => signOut()}
-                                className="py-3 text-gray-800 hover:bg-gray-100 rounded-md font-bold">
+                                className="p-3 text-gray-800 hover:bg-gray-100 rounded-md font-bold">
                                 <div className="flex items-center gap-2 justify-center">
-                                    <VscSignOut className='text-lg'/>
+                                    <VscSignOut className='text-xl'/>
                                     <span>Sign Out</span>
                                 </div>
                             </button>
