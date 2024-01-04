@@ -1,6 +1,6 @@
 // "use client"
+import { GPA } from '@/components/pages';
 import { Metadata } from 'next';
-import GPA from '../../components/pages/GPA';
 
 export const metadata: Metadata = {
     title: 'GPA Calculator',

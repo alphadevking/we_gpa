@@ -1,7 +1,7 @@
-"use client"
+// "use client"
 import { Layout } from '@/components/Layout'
 
-export default function CGPA() {
+export const CGPA = () => {
 
     return (
         <Layout navbar footer>

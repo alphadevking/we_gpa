@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { Layout } from '@/components/Layout'
 import { useMemo, useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
@@ -22,7 +22,7 @@ const gpaToast = (message: string) =>
         },
     });
 
-export default function GPA() {
+export const GPA = () => {
 
     const [courses, setCourses] = useState<Course[]>([]);
     const [noOfCourses, setNoOfCourses] = useState<number>(0);
@@ -176,33 +176,31 @@ export default function GPA() {
 
                             <h2>Grades & Course Units</h2>
 
-                            <div className='overflow-hidden w-full max-w-xl bg-gray-50 text-gray-800 py-5 px-2 md:p-5 shadow-lg rounded-lg mx-auto text-xs'>
-                                <div className='overflow-x-auto'>
+                            <div className="bg-white shadow overflow-hidden rounded-lg p-3 text-xs">
+                                <div className="overflow-auto p-1">
+                                    <div className="min-w-full divide-y divide-gray-200">
+                                        <div className='grid grid-cols-6 gap-5 text-gray-800 font-semibold uppercase py-2 text-xs'>
+                                            <div className='text-center whitespace-nowrap'>S/N</div>
+                                            <div className='text-center whitespace-nowrap col-span-2'>Course</div>
+                                            <div className='text-center whitespace-nowrap'>Units</div>
+                                            <div className='text-center whitespace-nowrap'>Count</div>
+                                            <div className='text-center whitespace-nowrap'>Grade</div>
+                                        </div>
 
-                                    <div className='grid grid-cols-5 text-gray-800 font-semibold uppercase'>
-                                        <div>S/N</div>
-                                        <div>Course</div>
-                                        <div>Units</div>
-                                        <div>Count</div>
-                                        <div>Grade</div>
-                                    </div>
-
-                                    {
-                                        courses.map((course, index) => (
-                                            <div key={index} className='grid grid-cols-5 items-center my-3'>
-                                                <div key={index} className="text-gray-600">
+                                        {courses.map((course, index) => (
+                                            <div key={index} className='grid grid-cols-6 gap-5 py-3 items-center border-b'>
+                                                <div className="text-gray-600">
                                                     {index + 1}
                                                 </div>
 
-                                                <div className='w-fit'>
-                                                    <input className='w-full p-2 outline-none bg-transparent ring-1 ring-gray-300 rounded-md uppercase'
+                                                <div className='col-span-2'>
+                                                    <input
+                                                        className='w-28 mx-auto p-2 outline-none bg-transparent ring-1 ring-gray-300 rounded-md uppercase'
                                                         type="text"
                                                         name="ctitle"
                                                         id="ctitle"
                                                         placeholder='Course Title'
-                                                        onChange={
-                                                            (e) => handleCourseTitleInput(e.target.value, index + 1)
-                                                        }
+                                                        onChange={(e) => handleCourseTitleInput(e.target.value, index + 1)}
                                                     />
                                                 </div>
 
@@ -210,37 +208,40 @@ export default function GPA() {
                                                     {course.unit}
                                                 </div>
 
-                                                <div className="flex mx-auto gap-1 text-lg">
-                                                    <button
-                                                        onClick={() => toggleUnit(index + 1, "increment")}
-                                                        className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-3 py-1 rounded-l-md duration-500"
-                                                    >
-                                                        +
-                                                    </button>
-                                                    <button
-                                                        onClick={() => toggleUnit(index + 1, "decrement")}
-                                                        className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-3 py-1 rounded-r-md duration-500"
-                                                    >
-                                                        -
-                                                    </button>
+                                                <div className='justify-items-center -ml-2 md:m-0'>
+                                                    <div className="flex gap-1 w-fit mx-auto text-[1rem]">
+                                                        <button
+                                                            onClick={() => toggleUnit(index + 1, "increment")}
+                                                            className="bg-gray-200 text-gray-800 hover:bg-gray-300 p-2 rounded-l-md duration-500"
+                                                        >
+                                                            +
+                                                        </button>
+                                                        <button
+                                                            onClick={() => toggleUnit(index + 1, "decrement")}
+                                                            className="bg-gray-200 text-gray-800 hover:bg-gray-300 p-2 rounded-r-md duration-500"
+                                                        >
+                                                            -
+                                                        </button>
+                                                    </div>
                                                 </div>
 
-                                                <select
-                                                    value={course.grade}
-                                                    className="outline-none bg-gray-100 border border-gray-300 rounded-md p-2 text-gray-800 focus:ring-gray-500 focus:border-gray-400 duration-500 justify-center"
-                                                    onChange={(e) => handleGradeInput(e.target.value, index + 1)}
-                                                >
-                                                    <option value="A">A(5)</option>
-                                                    <option value="B">B(4)</option>
-                                                    <option value="C">C(3)</option>
-                                                    <option value="D">D(2)</option>
-                                                    <option value="E">E(1)</option>
-                                                    <option value="F">F(0)</option>
-                                                </select>
-
+                                                <div>
+                                                    <select
+                                                        value={course.grade}
+                                                        className="outline-none bg-gray-100 border border-gray-300 rounded-md p-2 text-gray-800 focus:ring-gray-500 focus:border-gray-400 duration-500"
+                                                        onChange={(e) => handleGradeInput(e.target.value, index + 1)}
+                                                    >
+                                                        <option value="A">A(5)</option>
+                                                        <option value="B">B(4)</option>
+                                                        <option value="C">C(3)</option>
+                                                        <option value="D">D(2)</option>
+                                                        <option value="E">E(1)</option>
+                                                        <option value="F">F(0)</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        ))
-                                    }
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 
