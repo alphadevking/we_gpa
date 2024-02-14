@@ -163,7 +163,7 @@ export const GPA = () => {
                             <div className="bg-gray-50 text-gray-800 mx-auto rounded-xl flex items-center w-fit justify-between">
                                 <input
                                     type="number"
-                                    className="px-5 py-4 ring-1 ring-gray-50 hover:ring-gray-50 outline-none rounded-l-lg text-sm h-full"
+                                    className="px-5 py-4 ring-1 ring-gray-50 hover:ring-gray-50 outline-none rounded-l-lg text-sm bg-gray-50 text-gray-800 h-full"
                                     placeholder="No Of Courses"
                                     min={0}
                                     max={20}
@@ -195,7 +195,7 @@ export const GPA = () => {
 
                                                 <div className='col-span-2'>
                                                     <input
-                                                        className='w-28 mx-auto p-2 outline-none bg-transparent ring-1 ring-gray-300 rounded-md uppercase'
+                                                        className='w-28 mx-auto p-2 outline-none bg-transparent ring-1 ring-gray-300 rounded-md uppercase bg-gray-50 text-gray-800'
                                                         type="text"
                                                         name="ctitle"
                                                         id="ctitle"

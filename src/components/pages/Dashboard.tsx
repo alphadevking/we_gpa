@@ -163,7 +163,7 @@ export const Dashboard = () => {
                                     </button>
                                 </div>
                                 <div className="p-6 overflow-x-scroll px-0 pt-0 pb-2">
-                                    <table className="w-full min-w-[640px] table-auto">
+                                    <table className="w-full min-w-[300px] table-auto">
                                         <thead>
                                             <tr>
                                                 <th className="border-b border-gray-50 py-3 px-6 text-center">

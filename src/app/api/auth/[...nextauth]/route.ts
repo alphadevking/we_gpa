@@ -9,6 +9,7 @@ const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma) as Adapter,
     session: {
         strategy: "jwt",
+        maxAge: 7 * 24 * 60 * 60, /* 7days max */
     },
     providers: [
         GoogleProvider({

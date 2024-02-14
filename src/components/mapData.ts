@@ -1,5 +1,5 @@
 import editorKeys from '@/assets/editorKeys.jpg'
-import logo from '@/./app/logo.png'
+import logo from '@/./app/icon.png'
 
 export const topNavItems = [
   {

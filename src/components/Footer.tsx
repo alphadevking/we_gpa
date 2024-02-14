@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             </Link>
           </ul>
           <ul className="">
-            <Link href="https://linkedin.com/in/favour-orukpe-31432725b" className="" target="_blank">
+            <Link href="https://linkedin.com/in/favour-orukpe" className="" target="_blank">
               <FiLinkedin className="text-2xl hover:scale-150 duration-500" />
             </Link>
           </ul>

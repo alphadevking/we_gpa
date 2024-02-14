@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   },
   description: 'weGPA is a dynamic GPA and CGPA calculator designed specifically for college students. It allows for seamless user experience and a feature to export GPA and CGPA result to PDF.',
   icons: {
-    icon: '/logo.png',
+    icon: '/icon.png',
     other: {
       rel: 'icon',
-      url: '/logo.png',
+      url: '/icon.png',
     },
   },
   generator: 'Next.js',

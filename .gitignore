@@ -39,3 +39,6 @@ next-env.d.ts
 prisma/migrations
 prisma/wegpa.sqlite
 prisma/wegpa.sqlite-journal
+
+keeps
+src/utils/keywords.ts

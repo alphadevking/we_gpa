@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from 'react-icons/gr';
 import { assets, topNavItems } from './mapData';
 import Link from 'next/link';
 import Image from 'next/image';
 import SigninButton from './Buttons/signinButton';
+import { ThemeContext } from './Theme/ThemeContext';
 
 const Navbar: React.FC = () => {
+    const { isDark } = useContext(ThemeContext)
     const [showNav, setShowNav] = useState<boolean>(false);
 
     const toggleNav = () => setShowNav(!showNav);
 
     return (
-        <div className="md:px-32 px-5 fixed w-screen z-10 max-w-screen-2xl bg-transparent backdrop-blur pt-3 text-sm grid md:grid-flow-col items-center">
-            <div className='flex justify-between items-center'>
+        <div className="md:px-32 fixed w-screen z-10 max-w-screen-2xl bg-transparent backdrop-blur-xl pt-3 text-sm grid md:grid-flow-col items-center">
+            <div className='px-5 flex justify-between items-center'>
                 <Link href='/' className="flex gap-x-1 cursor-pointer select-none w-fit my-auto">
                     <Image src={assets.images.logo} className='w-12 h-12 m-auto' alt='weGPA'/>
                     <div className="font-semibold normal-case text-xl py-4">weGPA</div>
@@ -23,7 +25,7 @@ const Navbar: React.FC = () => {
                 </button>
             </div>
 
-            <div className={`${showNav ? "block" : "hidden"} left-0 top-full w-full bg-white/30 md:hidden`}>
+            <div className={`${showNav ? "block" : "hidden"} left-0 top-full w-full ${isDark ? 'bg-emerald-800/30 text-emerald-50' : ''} backdrop-blur-xl md:hidden`}>
                 <ul className="flex flex-col items-center py-3">
                     {
                         topNavItems.map((val, i) => (

@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <Head>
-        <link rel="icon" href="/logo.png" sizes="any" /> 
+        <link rel="icon" href="/icon.png" sizes="any" /> 
       </Head>
       <Layout navbar footer className="mx-l md:ml-24 lg:ml-32 p-5">
         <div className="md:flex md:mr-0 mr-10">
